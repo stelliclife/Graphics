@@ -1,6 +1,9 @@
 #ifndef _VEC3D_H_
 #define _VEC3D_H_
 
+#include "include/point3d.h"
+#include "point3d.cpp"
+
 class Vec3d
 {
 private:
@@ -19,7 +22,9 @@ public:
   void set_z(double input_z);
 
   Vec3d operator+(Vec3d& other);
+  Point3d operator+(Point3d& other);
   Vec3d operator-(Vec3d& other);
+  Point3d operator-(Point3d& other);
   Vec3d operator*(double value);
   Vec3d operator/(double value);
   Vec3d operator%(int value);

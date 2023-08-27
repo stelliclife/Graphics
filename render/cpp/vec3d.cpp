@@ -1,5 +1,7 @@
 #include <iostream>
 #include "include/vec3d.h"
+#include "include/point3d.h"
+#include "point3d.cpp"
 
 Vec3d::Vec3d()
   : x(0.0), y(0.0), z(0.0)
@@ -50,6 +52,15 @@ Vec3d Vec3d::operator+(Vec3d& other)
   return Vec3d(result_x, result_y, result_z);
 }
 
+Point3d Vec3d::operator+(Point3d& other)
+{
+  double result_x = x + other.get_x();
+  double result_y = y + other.get_y();
+  double result_z = z + other.get_z();
+
+  return Point3d(result_x, result_y, result_z);
+}
+
 Vec3d Vec3d::operator-(Vec3d& other)
 {
   double result_x = x - other.get_x();
@@ -57,6 +68,15 @@ Vec3d Vec3d::operator-(Vec3d& other)
   double result_z = z - other.get_z();
 
   return Vec3d(result_x, result_y, result_z);
+}
+
+Point3d Vec3d::operator-(Point3d& other)
+{
+  double result_x = x - other.get_x();
+  double result_y = y - other.get_y();
+  double result_z = z - other.get_z();
+
+  return Point3d(result_x, result_y, result_z);
 }
 
 Vec3d Vec3d::operator*(double value)
