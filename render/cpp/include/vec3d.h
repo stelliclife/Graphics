@@ -9,8 +9,8 @@ private:
   double z;
 
 public:
+  Vec3d();
   Vec3d(double input_x, double input_y, double input_z);
-  Vec3d(Vec3d& copy);
   const double get_x() const;
   const double get_y() const;
   const double get_z() const;
@@ -20,6 +20,9 @@ public:
 
   Vec3d operator+(Vec3d& other);
   Vec3d operator-(Vec3d& other);
+  Vec3d operator*(double value);
+  Vec3d operator/(double value);
+  Vec3d operator%(int value);
   Vec3d& operator-();
 
   Vec3d& operator++();
